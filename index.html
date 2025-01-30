@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expanding Pharmacy Services</title> 
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="whitepaper-container">
+    <header class="header">
+      <div class="logo-container">
+        <img src="./images/titan.png" alt="TITAN PMR Logo" class="titan-logo"> </div>
+      <h1>Pharmacy Services Calculator</h1> 
+      <p class="subtitle">See how much revenue you can generate and how much time each service will take</p>
+    </header>
+
+    <main>
+
+  <!-- Select and Add Services -->
+  <section class="bento-section select-services">
+    <div class="container">
+      <h2>Select and Add Services</h2>
+      <p>Select services from NHS or Private categories, and add them to the list for calculation.</p>
+  
+      <div class="row justify-content-center">
+        <!-- NHS Services Dropdown -->
+        <div class="col-md-6">
+          <label for="nhsServiceList">NHS Services:</label>
+          <select id="nhsServiceList" class="form-control custom-select">
+            <option value="">-- Select an NHS Service --</option>
+            <option value="nms" data-time="15" data-revenue="24">New Medicine Service (NMS)</option>
+            <option value="flu_vaccination" data-time="12" data-revenue="12">Flu Vaccination Service</option>
+            <option value="cpcs" data-time="20" data-revenue="18">Community Pharmacist Consultation Service (CPCS)</option>
+            <option value="hypertension" data-time="18" data-revenue="38">Hypertension Case-Finding Service</option>
+            <option value="nhs_health_checks" data-time="25" data-revenue="0">NHS Health Checks</option>
+            <option value="smoking_cessation" data-time="20" data-revenue="0">Smoking Cessation Service</option>
+            <option value="mur" data-time="25" data-revenue="28">Medicines Use Review (MUR)</option>
+            <option value="aur" data-time="18" data-revenue="28">Appliance Use Review (AUR)</option>
+            <option value="pharmacy_first" data-time="20" data-revenue="15">Pharmacy First</option>
+          </select>
+          <button id="addNhsService" class="btn btn-primary mt-3">Add NHS Service</button>
+        </div>
+      
+        <!-- Private Services Dropdown -->
+        <div class="col-md-6">
+          <label for="privateServiceList">Private Services:</label>
+          <select id="privateServiceList" class="form-control custom-select">
+            <option value="">-- Select a Private Service --</option>
+            <option value="travel_vaccinations" data-time="25" data-revenue="60">Travel Vaccinations</option>
+            <option value="health_screening" data-time="18" data-revenue="35">Health Screening</option>
+            <option value="weight_management" data-time="45" data-revenue="100">Weight Management Consultations</option>
+            <option value="private_smoking_cessation" data-time="45" data-revenue="200">Smoking Cessation (Private)</option>
+            <option value="erectile_dysfunction" data-time="25" data-revenue="75">Erectile Dysfunction Consultations</option>
+            <option value="hair_loss" data-time="25" data-revenue="75">Hair Loss Consultations</option>
+            <option value="skin_conditions" data-time="25" data-revenue="75">Skin Condition Consultations</option>
+            <option value="point_of_care_testing" data-time="18" data-revenue="35">Point-of-Care Testing</option>
+          </select>
+          <button id="addPrivateService" class="btn btn-primary mt-3">Add Private Service</button>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  <!-- Selected Services -->
+  <section class="bento-section">
+    <div class="container">
+      <h2>Selected Services</h2>
+      <ul id="serviceList" class="list-group">
+        <!-- Selected services will appear here dynamically -->
+         
+      </ul>
+    </div>
+  </section>
+
+  
+  <section class="bento-section">
+    <div class="container">
+      <h2>Summary</h2>
+      <div class="row justify-content-center">
+        <!-- Revenue Cards -->
+        <div class="revenue-cards">
+          <div class="summary-card">
+            <i class="fas fa-pound-sign"></i>
+            <p class="summary-title">Daily Revenue</p>
+            <p class="summary-value" id="dailyRevenue">£0.00</p>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-calendar-week"></i>
+            <p class="summary-title">Weekly Revenue</p>
+            <p class="summary-value" id="weeklyRevenue">£0.00</p>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-calendar-alt"></i>
+            <p class="summary-title">Monthly Revenue</p>
+            <p class="summary-value" id="monthlyRevenue">£0.00</p>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-calendar"></i>
+            <p class="summary-title">Yearly Revenue</p>
+            <p class="summary-value" id="yearlyRevenue">£0.00</p>
+          </div>
+        </div>
+        <!-- Time Needed Card -->
+        <div class="time-needed">
+          <div class="summary-card">
+            <i class="fas fa-clock"></i>
+            <p class="summary-title">Time Needed</p>
+            <p class="summary-value" id="dailyTime">0h 0m</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="bento-section time-for-services hidden">
+    <div class="container">
+      <h2>See How You Can Make Time for Services</h2>
+      <p class="stat-highlight">Pharmacists spend up to <span class="highlight">40%</span> of their day on admin.</p>
+      <p>With TITAN PMR, you can streamline workflows and gain more time to focus on delivering patient services.</p>
+      <a href="https://www.titanpmr.com" class="cta-button">Find Out How</a>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+
+<!-- 
+<section class="bento-section">
+  <div class="container">
+    <h2>Service Overview: Time vs Revenue</h2>
+    <p>This chart provides an overview of all available services, showing their average time required and revenue generated.</p>
+    <canvas id="serviceOverviewChart" width="800" height="400"></canvas>
+  </div>
+</section>
+-->
+
+  
+  
+      
+      
+
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; 2024 TITAN PMR. All rights reserved. | <a href="https://www.titanpmr.com">Learn more about TITAN PMR</a>
+      </p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.8/dist/countUp.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>  
+
+</body>
+</html>

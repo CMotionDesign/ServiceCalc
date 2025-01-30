@@ -1,0 +1,431 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'SF Pro Text', sans-serif; 
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111827;
+  background-color: #f9fafb;
+  padding: 20px; /* Add some space around the content */
+}
+
+
+
+
+/* selected service list */
+#serviceList .list-group-item {
+  text-align: left; /* Keep items left-aligned */
+  padding: 8px 15px; /* Slightly reduce padding for cleaner layout */
+}
+
+#serviceList strong {
+  display: inline; /* Remove the block-level behaviour */
+  margin-bottom: 0; /* Remove extra space below the service name */
+}
+
+#serviceList small {
+  display: inline; /* Keep details inline with the service name */
+  margin-left: 5px; /* Add a small space between the service name and details */
+}
+
+/* Select and Add Services Section */
+.select-services {
+  padding: 30px;
+  margin-bottom: 30px; /* Add spacing below the section */
+}
+
+/* Center-align text inside the dropdown */
+#nhsServiceList, #privateServiceList {
+  text-align: center; /* Center-align the selected option */
+  text-align-last: center; /* Ensure the placeholder is centered */
+}
+
+/* Override default browser styles to keep options left-aligned when opened */
+#nhsServiceList option, #privateServiceList option {
+  text-align: left; /* Keeps options left-aligned when the dropdown is open */
+}
+
+
+
+.select-services p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #6c757d; /* Muted grey text */
+}
+
+/* Dropdown Styling */
+.custom-select {
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded edges */
+  padding: 8px 12px; /* Inner padding */
+  font-size: 1rem;
+  height: auto; /* Ensure consistent height */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-select:focus {
+  border-color: #007bff; /* Blue focus border */
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3); /* Blue glow */
+}
+
+
+/* Button Styling */
+.btn-primary {
+
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #0056b3, #0088cc); /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.btn-primary:active {
+  transform: translateY(0); /* Remove lift on click */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+}
+
+
+
+/* Revenue Cards Group */
+.revenue-cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Revenue Card Styling */
+.revenue-cards .summary-card {
+  flex: 1 1 calc(25% - 15px);
+  max-width: 200px;
+  min-width: 180px;
+  height: 140px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+/* Gradient Blue Effect for Values */
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Time Needed Card Group */
+.time-needed {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Time Needed Card (Now With Both Glow & Stroke) */
+.time-needed .summary-card {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4); /* Sexy gradient glow */
+  padding: 15px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* 🔵 Pseudo-element for Gradient Stroke */
+.time-needed .summary-card::after {
+  content: "";
+  position: absolute;
+  inset: -4px; /* Creates a 4px stroke */
+  border-radius: 16px; /* Must be larger than parent to be visible */
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  z-index: -1;
+}
+
+/* Card Icons */
+.summary-card i {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Card Titles */
+.summary-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #6c757d;
+}
+
+/* Bigger Time Value */
+#dailyTime {
+  font-size: 2rem; /* Increase the font size */
+  font-weight: bold;
+  background: linear-gradient(45deg, #007bff, #00c6ff); /* Gradient blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .revenue-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .revenue-cards .summary-card {
+    flex: 1 1 calc(50% - 15px);
+  }
+
+  .time-needed .summary-card {
+    width: 100%;
+  }
+}
+
+
+/* New Section: Time for Services */
+.time-for-services {
+  background: #f8f9fa; /* Light grey background */
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+
+
+/* Highlighted Stat */
+.stat-highlight {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+.cta-button:hover {
+  background: linear-gradient(45deg, #0056b3, #0088cc);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+
+
+
+/* Container */.whitepaper-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevents box-shadow from being cut off */
+}
+
+/* TITAN Branding */.header {
+  text-align: center;
+  padding: 30px;
+  background-color: #f9fafb; /* Add a subtle background color */
+}.titan-logo {
+  max-width: 50px; /* Increased logo size */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px; 
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(to bottom right, #2da7ff, #2d40ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+/* Bento Sections */.bento-section {
+  text-align: center;
+  padding: 30px; 
+  border-bottom: 1px solid #eee; /* Add a subtle divider */
+}.bento-section:last-of-type {
+  border-bottom: none; /* Remove divider from the last section */
+}.bento-section ul {
+  margin-left: 20px;
+  list-style: disc;
+  color: #374151;
+}.bento-section ul li {
+  margin-bottom: 10px;
+}
+
+/* Hide the section initially */
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* Animation for the top-to-bottom reveal */
+.reveal {
+  display: block;
+  opacity: 1;
+  animation: revealWipe 0.7s ease-in-out;
+}
+
+/* Keyframes for the wipe animation */
+@keyframes revealWipe {
+  0% {
+    clip-path: inset(0 0 100% 0); /* Fully hidden (top-to-bottom) */
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0); /* Fully revealed */
+    opacity: 1;
+  }
+}
+
+/* Remove shadow from the section */
+.time-for-services {
+  background-color: #ffffff;
+  padding: 30px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 12px; /* Keeps rounded corners */
+  overflow: hidden; /* Ensures animations work */
+  box-shadow: none; /* Explicitly removes shadow */
+}
+
+/* If the shadow comes from a parent container */
+.time-for-services .container {
+  box-shadow: none; /* Ensures the container inside the section has no shadow */
+}
+
+/* Remove shadow from bento-section if it's the parent */
+.bento-section {
+  box-shadow: none; /* Removes shadow from all bento sections */
+}
+
+
+.time-for-services .stat-highlight {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.time-for-services a.cta-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.time-for-services a.cta-button:hover {
+  background: linear-gradient(45deg, #0056b3, #0088cc);
+}
+
+
+
+
+
+
+
+/* CTA Button */.cta-btn {
+  display: inline-block; 
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #2da7ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline from link */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}.cta-btn:hover {
+  background-color: #0056b3; 
+}
+
+
+/* Footer */.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #dcdcdc; /* Darker background for footer */
+  color: white;
+}
+
+.benefit-card {
+  background-color: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  
+  }
+
