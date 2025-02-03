@@ -34,16 +34,19 @@
           <label for="nhsServiceList">NHS Services:</label>
           <select id="nhsServiceList" class="form-control custom-select">
             <option value="">-- Select an NHS Service --</option>
-            <option value="nms" data-time="15" data-revenue="24">New Medicine Service (NMS)</option>
-            <option value="flu_vaccination" data-time="12" data-revenue="12">Flu Vaccination Service</option>
-            <option value="cpcs" data-time="20" data-revenue="18">Community Pharmacist Consultation Service (CPCS)</option>
-            <option value="hypertension" data-time="18" data-revenue="38">Hypertension Case-Finding Service</option>
-            <option value="nhs_health_checks" data-time="25" data-revenue="0">NHS Health Checks</option>
-            <option value="smoking_cessation" data-time="20" data-revenue="0">Smoking Cessation Service</option>
-            <option value="mur" data-time="25" data-revenue="28">Medicines Use Review (MUR)</option>
-            <option value="aur" data-time="18" data-revenue="28">Appliance Use Review (AUR)</option>
-            <option value="pharmacy_first" data-time="20" data-revenue="15">Pharmacy First</option>
-          </select>
+            <option value="nms" data-time="15" data-revenue="24" data-cost="0">New Medicine Service (NMS)</option>
+            <option value="flu_vaccination" data-time="12" data-revenue="9.58" data-cost="7">Flu Vaccination Service</option>
+
+            <option value="cpcs" data-time="20" data-revenue="18" data-cost="0">Community Pharmacist Consultation Service (CPCS)</option>
+            <option value="hypertension" data-time="18" data-revenue="38" data-cost="1">Hypertension Case-Finding Service</option>
+            <option value="nhs_health_checks" data-time="25" data-revenue="0" data-cost="5">NHS Health Checks</option>
+            <option value="smoking_cessation" data-time="20" data-revenue="15" data-cost="5">Smoking Cessation Service</option>
+            <option value="mur" data-time="25" data-revenue="28" data-cost="0">Medicines Use Review (MUR)</option>
+            <option value="aur" data-time="18" data-revenue="28" data-cost="2">Appliance Use Review (AUR)</option>
+            <option value="pharmacy_first" data-time="20" data-revenue="15" data-cost="2">Pharmacy First</option>
+            <option value="discharge_medicines" data-time="20" data-revenue="35" data-cost="0">Discharge Medicines Service</option>
+            <option value="tier_one_contraception" data-time="15" data-revenue="18" data-cost="2">Tier One Contraception</option>
+          </select>          
           <button id="addNhsService" class="btn btn-primary mt-3">Add NHS Service</button>
         </div>
       
@@ -52,15 +55,24 @@
           <label for="privateServiceList">Private Services:</label>
           <select id="privateServiceList" class="form-control custom-select">
             <option value="">-- Select a Private Service --</option>
-            <option value="travel_vaccinations" data-time="25" data-revenue="60">Travel Vaccinations</option>
-            <option value="health_screening" data-time="18" data-revenue="35">Health Screening</option>
-            <option value="weight_management" data-time="45" data-revenue="100">Weight Management Consultations</option>
-            <option value="private_smoking_cessation" data-time="45" data-revenue="200">Smoking Cessation (Private)</option>
-            <option value="erectile_dysfunction" data-time="25" data-revenue="75">Erectile Dysfunction Consultations</option>
-            <option value="hair_loss" data-time="25" data-revenue="75">Hair Loss Consultations</option>
-            <option value="skin_conditions" data-time="25" data-revenue="75">Skin Condition Consultations</option>
-            <option value="point_of_care_testing" data-time="18" data-revenue="35">Point-of-Care Testing</option>
+            <option value="travel_vaccinations" data-time="25" data-revenue="60" data-cost="40">Travel Vaccinations</option>
+            <option value="health_screening" data-time="18" data-revenue="35" data-cost="5">Health Screening</option>
+            <option value="weight_management" data-time="45" data-revenue="100" data-cost="15">Weight Management Consultations</option>
+            <option value="private_smoking_cessation" data-time="45" data-revenue="200" data-cost="20">Smoking Cessation (Private)</option>
+            <option value="erectile_dysfunction" data-time="25" data-revenue="75" data-cost="5">Erectile Dysfunction Consultations</option>
+            <option value="hair_loss" data-time="25" data-revenue="75" data-cost="5">Hair Loss Consultations</option>
+            <option value="skin_conditions" data-time="25" data-revenue="75" data-cost="5">Skin Condition Consultations</option>
+            <option value="point_of_care_testing" data-time="18" data-revenue="35" data-cost="8">Point-of-Care Testing</option>
+            <option value="otoscopy" data-time="45" data-revenue="80" data-cost="2">Otoscopy / Microsuction</option>
+            <option value="capillary_testing" data-time="25" data-revenue="30" data-cost="5">Capillary Testing</option>
+            <option value="cryotherapy" data-time="15" data-revenue="60" data-cost="10">Cryotherapy</option>
+            <option value="dermatology_consultation" data-time="15" data-revenue="25" data-cost="0">Dermatology Consultation</option>
+            <option value="gut_health" data-time="15" data-revenue="25" data-cost="5">Gut Health Consultation</option>
+            <option value="psoriasis_consultation" data-time="15" data-revenue="25" data-cost="0">Psoriasis Consultation</option>
+            <option value="womens_health" data-time="15" data-revenue="25" data-cost="5">Women's Health Consultation</option>
+            <option value="mens_health" data-time="15" data-revenue="25" data-cost="5">Men’s Health Consultation</option>
           </select>
+          
           <button id="addPrivateService" class="btn btn-primary mt-3">Add Private Service</button>
         </div>
       </div>
